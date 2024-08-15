@@ -35,6 +35,7 @@ def define_seed(univList):
             else:
                 left = 0
                 mid = 0
+                k = 0
                 right = len(list)-1
                 while left <= right:
                     mid = (left + right) // 2
@@ -57,30 +58,34 @@ def define_seed(univList):
                     while pair.PreviousRankOfFront > list[mid].PreviousRankOfFront:
                         mid += 1
                         if mid >= len(list):
+                            k = 1
                             break
                     print(mid)
-                    if pair.PreviousRankOfFront == list[mid].PreviousRankOfFront:
-                        if mid < len(list) and mid >= 0:
-                            while pair.TeamRank < list[mid].TeamRank:
-                                mid -= 1
-                                if mid < 0:
-                                    mid = 0
-                                    break
-                            while pair.TeamRank > list[mid].TeamRank:
-                                mid += 1
-                                if mid >= len(list):
-                                    break
-                            if pair.TeamRank == list[mid].TeamRank:
-                                    if mid < len(list) and mid >= 0:
-                                        while pair.SchoolRank < list[mid].SchoolRank:
-                                            mid -= 1
-                                            if mid < 0:
-                                                mid = 0
-                                                break
-                                        while pair.SchoolRank > list[mid].SchoolRank:
-                                            mid += 1
-                                            if mid >= len(list):
-                                                break
+                    if k != 1:
+                        if pair.PreviousRankOfFront == list[mid].PreviousRankOfFront:
+                            if mid < len(list) and mid >= 0:
+                                while pair.TeamRank < list[mid].TeamRank:
+                                    mid -= 1
+                                    if mid < 0:
+                                        mid = 0
+                                        break
+                                while pair.TeamRank > list[mid].TeamRank:
+                                    mid += 1
+                                    if mid >= len(list):
+                                        k = 1
+                                        break
+                                if k != 1:
+                                    if pair.TeamRank == list[mid].TeamRank and k != 1:
+                                            if mid < len(list) and mid >= 0:
+                                                while pair.SchoolRank < list[mid].SchoolRank:
+                                                    mid -= 1
+                                                    if mid < 0:
+                                                        mid = 0
+                                                        break
+                                                while pair.SchoolRank > list[mid].SchoolRank:
+                                                    mid += 1
+                                                    if mid >= len(list):
+                                                        break
                 elif pair.PreviousRankOfBack > list[mid].PreviousRankOfBack:
                     mid += 1
                 print("mid")
