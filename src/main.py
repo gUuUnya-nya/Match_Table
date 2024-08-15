@@ -1,6 +1,5 @@
 from typing import NamedTuple
 import info
-import model
 def main():
     #入力を受け付ける
     univList = []

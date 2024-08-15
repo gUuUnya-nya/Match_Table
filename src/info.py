@@ -1,5 +1,3 @@
-from typing import NamedTuple
-from typing import List
 import model
 #各大学の情報を入力させる関数
 def enter_info(univName):
