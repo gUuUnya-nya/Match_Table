@@ -1,5 +1,6 @@
 from typing import NamedTuple
 import model
+#各大学の情報を入力させる関数
 def enter_info(univName):
     print(univName + "の団体戦の順位を入力してください:")
     TeamRank = int(input())

@@ -1,7 +1,8 @@
 from typing import NamedTuple
-import inputinfo
+import info
 import model
 def main():
+    #入力を受け付ける
     univList = []
     while True:
         print("大学名を入力してください(終了する場合はexitと入力):")
@@ -9,7 +10,8 @@ def main():
         if univName == "exit":
             break
         print("大学名:" + univName)
-        univList.append(inputinfo.enter_info(univName))
+        univList.append(info.enter_info(univName))
         print(univList)
+    #シード値計算
 if __name__ == "__main__":
     main()
