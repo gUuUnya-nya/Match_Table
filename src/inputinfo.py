@@ -4,7 +4,11 @@ def enter_info(univName):
     print(univName + "の団体戦の順位を入力してください:")
     TeamRank = int(input())
     pairs = []
+    count = 0
     while True:
+        print("学内の順位順に選手の情報を入力してください")
+        count += 1
+        print("学内順位" + str(count) + "位のペアの情報を入力してください")
         print("後衛の名前を入力してください(終了する場合はexit):")
         backPlayer = input()
         if backPlayer == "exit":
@@ -15,8 +19,7 @@ def enter_info(univName):
         frontPlayer = input()
         print("前衛の前回の順位を入力してください:")
         previousRankOfFront = int(input())
-        print("ペアの学内順位を入力してください:")
-        schoolRank = int(input())
+        schoolRank = count
         pair = model.Pair(backPlayer, frontPlayer, previousRankOfBack, previousRankOfFront, schoolRank)
         print(pair)
         pairs.append(pair)
