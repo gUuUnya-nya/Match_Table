@@ -7,6 +7,7 @@ class Pair(NamedTuple):
     PreviousRankOfFront: int #前衛の順位
     SchoolRank: int #学内の順位
     TeamRank: int #団体戦の順位
+    UnivName: str
 class Univ(NamedTuple):
     UnivName: str
     Pairs: List[Pair]

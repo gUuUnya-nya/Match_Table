@@ -22,7 +22,7 @@ def enter_info(univName):
         print("前衛の前回の順位を入力してください:")
         previousRankOfFront = int(input())
         schoolRank = count
-        pair = model.Pair(backPlayer, frontPlayer, previousRankOfBack, previousRankOfFront, schoolRank, TeamRank)
+        pair = model.Pair(backPlayer, frontPlayer, previousRankOfBack, previousRankOfFront, schoolRank, TeamRank, univName)
         pairs.append(pair)
     univ = model.Univ(univName, pairs, TeamRank)
     return univ
