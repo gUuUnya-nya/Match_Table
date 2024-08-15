@@ -11,7 +11,8 @@ def main():
             break
         print("大学名:" + univName)
         univList.append(info.enter_info(univName))
-        print(univList)
-    #シード値計算
+    #シード順にリストに格納する
+    list = info.define_seed(univList)
+    print(list)
 if __name__ == "__main__":
     main()
