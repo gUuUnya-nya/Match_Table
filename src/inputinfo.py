@@ -1,10 +1,9 @@
 from typing import NamedTuple
 import model
 def enter_info(univName):
-    print("check")
     print(univName + "の団体戦の順位を入力してください:")
     TeamRank = int(input())
-    pairs = list[model.Pair]
+    pairs = []
     while True:
         print("後衛の名前を入力してください(終了する場合はexit):")
         backPlayer = input()
@@ -19,6 +18,8 @@ def enter_info(univName):
         print("ペアの学内順位を入力してください:")
         schoolRank = int(input())
         pair = model.Pair(backPlayer, frontPlayer, previousRankOfBack, previousRankOfFront, schoolRank)
+        print(pair)
         pairs.append(pair)
+        print(pairs)
     univ = model.Univ(univName, pairs, TeamRank)
     return univ

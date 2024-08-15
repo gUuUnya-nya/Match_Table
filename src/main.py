@@ -2,9 +2,9 @@ from typing import NamedTuple
 import inputinfo
 import model
 def main():
-    univList = list[model.Univ]
-    print("大学名を入力してください:")
+    univList = []
     while True:
+        print("大学名を入力してください(終了する場合はexitと入力):")
         univName = input()
         if univName == "exit":
             break
