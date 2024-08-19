@@ -29,7 +29,6 @@ def define_seed(univList):
     list = []
     for univ in univList:
         for pair in univ.Pairs:
-            print(pair)
             if list == []:
                 list.append(pair)
             else:
@@ -45,10 +44,6 @@ def define_seed(univList):
                         left = mid + 1
                     elif pair.PreviousRankOfBack == list[mid].PreviousRankOfBack:
                         break
-                print(list[mid].PreviousRankOfFront)
-                print(pair.PreviousRankOfFront)
-                print(list)
-                print(mid)
                 if pair.PreviousRankOfBack == list[mid].PreviousRankOfBack:
                     while pair.PreviousRankOfFront < list[mid].PreviousRankOfFront:
                         mid -= 1
@@ -60,7 +55,6 @@ def define_seed(univList):
                         if mid >= len(list):
                             k = 1
                             break
-                    print(mid)
                     if k != 1:
                         if pair.PreviousRankOfFront == list[mid].PreviousRankOfFront:
                             if mid < len(list) and mid >= 0:
@@ -77,18 +71,16 @@ def define_seed(univList):
                                 if k != 1:
                                     if pair.TeamRank == list[mid].TeamRank and k != 1:
                                             if mid < len(list) and mid >= 0:
-                                                while pair.SchoolRank < list[mid].SchoolRank:
+                                                while pair.SchoolRank < list[mid].SchoolRank and pair.TeamRank == list[mid].TeamRank:
                                                     mid -= 1
                                                     if mid < 0:
                                                         mid = 0
                                                         break
-                                                while pair.SchoolRank > list[mid].SchoolRank:
+                                                while pair.SchoolRank > list[mid].SchoolRank and pair.TeamRank == list[mid].TeamRank:
                                                     mid += 1
                                                     if mid >= len(list):
                                                         break
                 elif pair.PreviousRankOfBack > list[mid].PreviousRankOfBack:
                     mid += 1
-                print("mid")
-                print(mid)
                 list.insert(mid, pair)
     return list
